@@ -1,7 +1,13 @@
 # Change Log
-All notable changes to the "vue-iview-extension" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+Generate vue iview code in VS Code
 
-## [Unreleased]
-- Initial release
+## [1.0.0]
+
+### Added
+
+- Generate rules code
+- Generate form code
+- Generate columns code
+- Generate dialog code
+- Generate table code

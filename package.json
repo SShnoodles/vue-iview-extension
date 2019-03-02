@@ -6,11 +6,13 @@
 	"author": "ssnoodles",
 	"publisher": "ssnoodles",
 	"license": "MIT",
+	"icon": "resources/v-i-e.png",
 	"engines": {
 		"vscode": "^1.31.0"
 	},
 	"categories": [
-		"Other"
+		"Other",
+		"Snippets"
 	],
 	"keywords": [
 		"vue",
@@ -19,22 +21,32 @@
 	"activationEvents": [
 		"onCommand:extension.iviewForm",
 		"onCommand:extension.iviewColumns",
-		"onCommand:extension.iviewRules"
+		"onCommand:extension.iviewRules",
+		"onCommand:extension.iviewDialog",
+		"onCommand:extension.iviewTable"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "extension.iviewForm",
-				"title": "Vue-iview Form"
+				"title": "Vue-iview: Form"
 			},
 			{
 				"command": "extension.iviewColumns",
-				"title": "Vue-iview Columns"
+				"title": "Vue-iview: Columns"
 			},
 			{
 				"command": "extension.iviewRules",
-				"title": "Vue-iview Rules"
+				"title": "Vue-iview: Rules"
+			},
+			{
+				"command": "extension.iviewDialog",
+				"title": "Vue-iview: Dialog"
+			},
+			{
+				"command": "extension.iviewTable",
+				"title": "Vue-iview: Table"
 			}
 		],
 		"menus": {
@@ -53,6 +65,16 @@
 					"when": "editorFocus",
 					"command": "extension.iviewColumns",
 					"group": "a_iview@3"
+				},
+				{
+					"when": "editorFocus",
+					"command": "extension.iviewDialog",
+					"group": "a_iview@4"
+				},
+				{
+					"when": "editorFocus",
+					"command": "extension.iviewTable",
+					"group": "a_iview@5"
 				}
 			]
 		}

@@ -10,9 +10,7 @@ export function execute() {
       let javaParse = new JavaParse(javaText);
       let javaBean = javaParse.parse();
       console.log(javaBean);
-
-      let items: string[] = [];
-      javaBean.variables.forEach(variable => items.push(formUtils.of(variable.name, variable.comment, formUtils.find(variable.name, variable.type))));
+      let items = javaBean.variables.map(v => formUtils.of(v.name, v.comment, v.type));
       let template = formUtils.insert(items);
       let editor = vscode.window.activeTextEditor;
       if (editor) {

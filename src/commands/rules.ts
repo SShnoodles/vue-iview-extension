@@ -10,9 +10,7 @@ export function execute() {
       let javaParse = new JavaParse(javaText);
       let javaBean = javaParse.parse();
       console.log(javaBean);
-
-      let rules: string[] = [];
-      javaBean.variables.forEach(variable => rules.push(ruleUtils.of(variable.name, variable.comment, ruleUtils.find(variable.type))));
+      let rules = javaBean.variables.map(v => ruleUtils.of(v.name, v.comment, v.type));
       let ruleTemplate = ruleUtils.insert(rules);
       let editor = vscode.window.activeTextEditor;
       if (editor) {

@@ -1,19 +1,12 @@
+import { EOL } from 'os';
+import { SPACE, JavaType } from '../models/template';
+
 export const RulesType: Map<string,string[]> = new Map([
-  ["string", ["String", "Object"]],
-  ["number", ["Integer", "int", "Double", "double", "BigDecimal"]],
-  ["date", ["LocalDate", "OffsetDateTime"]],
-  ["boolean", ["Boolean", "boolean"]]
+  ["string", [JavaType.String, JavaType.Object]],
+  ["number", [JavaType.Integer, JavaType.int, JavaType.Double, JavaType.double, JavaType.BigDecimal]],
+  ["date", [JavaType.LocalDate, JavaType.OffsetDateTime]],
+  ["boolean", [JavaType.Boolean, JavaType.boolean]]
 ]);
-
-const enter = '\n';
-
-export function of(key: string, name: string, type: string): string {
-  return `  ${key}: [${enter}    { required: true, message: '${name}不能为空', trigger: 'blur', type: '${type}' }${enter}  ]`;
-}
-
-export function insert(rules: string[]): string {
-  return `rules: {${enter}${rules.join(`,${enter}`)}${enter}}`;
-}
 
 export function find(type: string): string {
   for (let [key, value] of RulesType) {
@@ -22,4 +15,18 @@ export function find(type: string): string {
     }
   }
   return 'string';
+}
+
+export function of(key: string, name: string, type: string): string {
+  return `  ${key}: [${EOL}    { required: true, message: '${name}不能为空', trigger: 'blur', type: '${find(type)}' }${EOL}  ]`;
+}
+
+export function insert(rules: string[]): string {
+  return `rules: {${EOL}${rules.join(`,${EOL}`)}${EOL}}`;
+}
+
+export function forDialog(key: string, name: string, type: string): string {
+  return `${SPACE.S4}${key}: [${EOL}` +
+    `${SPACE.S5}{ required: true, message: '${name}不能为空', trigger: 'blur', type: '${find(type)}' }${EOL}` +
+    `${SPACE.S4}]`;
 }
