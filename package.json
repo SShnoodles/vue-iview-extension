@@ -10,6 +10,11 @@
 	"engines": {
 		"vscode": "^1.31.0"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SShnoodles/vue-iview-extension"
+	},
+	"homepage": "https://github.com/SShnoodles/vue-iview-extension/blob/master/README.md",
 	"categories": [
 		"Other",
 		"Snippets"
