@@ -12,7 +12,7 @@ export function execute() {
       let javaParse = new JavaParse(javaText);
       let javaBean = javaParse.parse();
       console.log(javaBean);
-      let form = javaBean.variables.map(v => formUtils.forDialog(v.name, v.comment, v.type));
+      let form = javaBean.variables.map(v => formUtils.forTable(v.name, v.comment, v.type));
       let columns = javaBean.variables.map(v => columnUtils.forTable(v.name, v.comment, v.type));
       let template = tableUtils.insert(form, columns);
       let editor = vscode.window.activeTextEditor;

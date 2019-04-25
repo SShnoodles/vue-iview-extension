@@ -49,16 +49,17 @@ export class JavaParse {
       bean.variables = variables;
     }
     // comments
-    let comment = this.javaText.replace(/[^\u4e00-\u9fa5]+/g, ",");
-    comment = comment.substring(1, comment.length - 1);
-    let comments = comment.split(",");
-
-    if (comments.length > 0 && comments.length >= bean.variables.length) {
-      bean.comment = comments[0];
-      bean.variables.forEach((v, i) => v.comment = comments[i + 1]);
-    }
-    if (comments.length < bean.variables.length) {
-      vscode.window.showInformationMessage('Missing some comments!');
+    let comments = this.javaText.match(/[\u4e00-\u9fa5]+（[\u4e00-\u9fa5]+）|[\u4e00-\u9fa5]+\([\u4e00-\u9fa5]+\)|[\u4e00-\u9fa5]+/g);
+    if (comments) {
+      if (comments.length > 0 && comments.length >= bean.variables.length) {
+        bean.comment = comments[0];
+        bean.variables.forEach((v, i) => v.comment = comments[i + 1]);
+      }
+      if (comments.length < bean.variables.length) {
+        vscode.window.showInformationMessage('Missing some comments!');
+      }
+    } else {
+      vscode.window.showInformationMessage('Missing comments!');
     }
     return bean;
   }

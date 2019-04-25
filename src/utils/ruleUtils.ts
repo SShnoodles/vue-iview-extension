@@ -18,7 +18,7 @@ export function find(type: string): string {
 }
 
 export function of(key: string, name: string, type: string): string {
-  return `  ${key}: [${EOL}    { required: true, message: '${name}不能为空', trigger: 'blur', type: '${find(type)}' }${EOL}  ]`;
+  return `  ${key}: [${EOL}    { required: true, message: '${name} 必填', trigger: 'blur', type: '${find(type)}' }${EOL}  ]`;
 }
 
 export function insert(rules: string[]): string {
@@ -27,6 +27,6 @@ export function insert(rules: string[]): string {
 
 export function forDialog(key: string, name: string, type: string): string {
   return `${SPACE.S4}${key}: [${EOL}` +
-    `${SPACE.S5}{ required: true, message: '${name}不能为空', trigger: 'blur', type: '${find(type)}' }${EOL}` +
+    `${SPACE.S5}{ required: true, message: '${name} 必填', trigger: 'blur', type: '${find(type)}' }${EOL}` +
     `${SPACE.S4}]`;
 }
