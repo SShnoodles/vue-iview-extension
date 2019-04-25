@@ -2,7 +2,7 @@
 
 Generate vue iview code in VS Code
 
-## [1.0.0]
+## [0.0.1]
 
 ### Added
 
@@ -11,3 +11,9 @@ Generate vue iview code in VS Code
 - Generate columns code
 - Generate dialog code
 - Generate table code
+
+## [0.0.2]
+
+### Fixed
+- Fixed regex of comments
+- Fixed Dialog parse error

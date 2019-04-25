@@ -23,6 +23,11 @@ Generate vue iview code in VS Code.
 - Generate `dialog` code
 - Generate `table` code
 
-### 1.0.0
+### 0.0.1
 
 Initial
+
+### 0.0.2
+
+- Fixed regex of comments
+- Fixed Dialog parse error
