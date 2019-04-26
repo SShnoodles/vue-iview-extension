@@ -30,7 +30,7 @@ export class JavaParse {
       bean.comment = '';
     }
     // variables
-    let attrs = this.javaText.match(/(private|public)?\s+(BigDecimal|OffsetDateTime|LocalDate|Integer|int|float|Float|boolean|Boolean|double|Double|String|Object)[A-Za-z0-9|\s|_]+;/g);
+    let attrs = this.javaText.match(/(private|public)?\s+(BigDecimal|OffsetDateTime|LocalDate|Integer|int|float|Float|boolean|Boolean|double|Double|String|Object|AuditInfo|CommonInfo|CreatorInfo|EditorInfo)[A-Za-z0-9|\s|_]+;/g);
     if (attrs) {
       for (let attr of attrs) {
         attr = attr.trim();
