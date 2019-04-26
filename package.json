@@ -2,7 +2,7 @@
 	"name": "vue-iview-generator",
 	"displayName": "vue-iview-generator",
 	"description": "generator iview vue code in VS Code",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"author": "ssnoodles",
 	"publisher": "ssnoodles",
 	"license": "MIT",
